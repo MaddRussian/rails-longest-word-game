@@ -2,4 +2,8 @@
 
 <p><%= @result %></p>
 
-<%= link_to "Play again", new_path %>
+<p class="btn " style="color: white"><%= link_to "Play again", new_path %></p>
+
+
+<h2>Score: <%= @current_score %></h2>
+<h2>Total: <%= session[:score]%></h2>

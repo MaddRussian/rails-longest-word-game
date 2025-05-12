@@ -1,13 +1,15 @@
-<h1>New Game</h1>
+<h1 class="m-3">New Game</h1>
+
 
 <% @letters.each do |letter| %>
-  <%= letter %>
+  <h2 style="display: inline-block" class="m-2 btn btn-success"> <%= letter %> </h2>
 <% end %>
 
-<form action="/score" method="post" data-turbo="false">
+<form action="/score" method="post" data-turbo="false" class="form-control col-12 rows-justify-content">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <label>What is the longest word you can find?</label>
   <input type="text" name="word">
   <input type="submit" value="Play!">
   <input id="token" name="letters" type="hidden" value="<%=@letters.join%>" />
+  <input id="token" name="starting" type="hidden" value="<%=@starting%>" />
 </form>
